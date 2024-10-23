@@ -39,7 +39,6 @@ impl<'a> Manager<'a> {
             .await?
             .body()
             .deserialize::<OwnedObjectPath>()?;
-        // TODO: handle net.reactivated.Fprint.Error.NoSuchDevice
         Device::new(&self.1, object).await
     }
 }
